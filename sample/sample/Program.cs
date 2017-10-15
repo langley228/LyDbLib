@@ -17,34 +17,36 @@ namespace ConsoleApplication1
             string ss = @"Data Source=.\sqlexpress;initial catalog=sample;Integrated Security=True";
             using (LyEntity<sample> db = new LyEntity<sample>(ss))
             {
+                //delete all
                 db.Delete();
                 db.Execute();
                 Console.WriteLine(db.GetCommandTextAndParameter());
 
+                //Insert id 0~4
                 for (int i = 0; i < 5; i++)
                 {
                     db.Insert().Output().Values(new sample() { id = i, Text = "Insert" });
                     sample insertdata = db.Query().FirstOrDefault();
                     Console.WriteLine(db.GetCommandTextAndParameter());
-
                 }
 
+                //Update id 1
                 db.Update().Set(new { Text = "Update" }).Output().Where(m => m.id == 1);
                 sample updateData = db.Query().FirstOrDefault();
                 Console.WriteLine(db.GetCommandTextAndParameter());
 
+                //Delete id 2
                 db.Delete().Where(m => m.id == 2);
                 int iDel = db.Execute();
                 Console.WriteLine(db.GetCommandTextAndParameter());
 
+                //query id >0
                 db.Select().Where(m => m.id >0).OrderBy(m => m, c => new { c.Text });
                 List<sample> query = db.Query().ToList();
                 Console.WriteLine(db.GetCommandTextAndParameter());
-
                 foreach (var item in query)
                 {
                     Console.WriteLine($"{item.id} {item.Num} {item.Text}");
-
                 }
             }
 
