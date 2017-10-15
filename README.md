@@ -2,42 +2,61 @@
 
 <h3>sample code</h3>
 
+<h4>table class</h4>
+
+
+    public class sample
+    {
+        public sample() { }
+        public long id { get; set; }
+        public int Num { get; set; }
+        public string Text { get; set; }
+    }
+
+
+<h4>using LyEntity</h4>
 
             using (LyEntity<sample> db = new LyEntity<sample>(ss))
             {
+                //delete all
                 db.Delete();
                 db.Execute();
                 Console.WriteLine(db.GetCommandTextAndParameter());
 
+                //Insert id 0~4
                 for (int i = 0; i < 5; i++)
                 {
                     db.Insert().Output().Values(new sample() { id = i, Text = "Insert" });
                     sample insertdata = db.Query().FirstOrDefault();
                     Console.WriteLine(db.GetCommandTextAndParameter());
-
                 }
 
+                //Update id 1
                 db.Update().Set(new { Text = "Update" }).Output().Where(m => m.id == 1);
                 sample updateData = db.Query().FirstOrDefault();
                 Console.WriteLine(db.GetCommandTextAndParameter());
 
+                //Delete id 2
                 db.Delete().Where(m => m.id == 2);
                 int iDel = db.Execute();
                 Console.WriteLine(db.GetCommandTextAndParameter());
 
+                //query id >0
                 db.Select().Where(m => m.id >0).OrderBy(m => m, c => new { c.Text });
                 List<sample> query = db.Query().ToList();
                 Console.WriteLine(db.GetCommandTextAndParameter());
-
                 foreach (var item in query)
                 {
                     Console.WriteLine($"{item.id} {item.Num} {item.Text}");
-
                 }
             }
             
             
-            
+
+
+<h3>sample view</h3>
+
+
  <div style="word-wrap:break-word;width:100px">     
  
             DELETE FROM sample
