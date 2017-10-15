@@ -107,8 +107,6 @@ namespace LyDbLib
         }
         /// <summary>
         /// Select [Where] [OrderBy]
-        /// Update Set [Output] [Where] 
-        /// Delete [Where] 
         /// </summary>
         public LyEntity<TModel> Select<TKey>(Expression<Func<TModel, TKey>> keySelector)
         {
@@ -117,6 +115,8 @@ namespace LyDbLib
         }
         /// <summary>
         /// Select [Where] [OrderBy]
+        /// Update Set [Output] [Where] 
+        /// Delete [Where] 
         /// </summary>
         public LyEntity<TModel> Where(Expression<Func<TModel, bool>> predicate)
         {
@@ -141,6 +141,31 @@ namespace LyDbLib
             return this;
         }
 
+        /// <summary>
+        /// Update Set [Output] [Where] 
+        /// </summary>
+        public IEnumerable<TModel> QueryUpdate<TSet>(TSet v, Expression<Func<TModel, bool>> where) where TSet : class
+        {
+            m_SqlSb.Update().Set<TSet>(v).Output().Where(where);
+            return Query();
+        }
+
+        /// <summary>
+        /// Insert Output Values
+        /// </summary>
+        public TModel QueryInsert(TModel v) 
+        {
+            m_SqlSb.Insert().Output().Values(v);
+            return Query().FirstOrDefault();
+        }
+        /// <summary>
+        /// Select Where OrderBy
+        /// </summary>
+        public IEnumerable<TModel> QueryWhereOrderBy<TOrder>(Expression<Func<TModel, bool>> where, Expression<Func<TModel, TOrder>> order)
+        {
+            m_SqlSb.Select().Where(where).OrderBy(order);
+            return Query();
+        }
 
         /// <summary>查詢</summary>
         public IEnumerable<QModel> Query<QModel>() where QModel : class

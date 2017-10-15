@@ -48,6 +48,22 @@ namespace ConsoleApplication1
                 {
                     Console.WriteLine($"{item.id} {item.Num} {item.Text}");
                 }
+
+                //QueryInsert id 10~14
+                for (int i = 10; i < 15; i++)
+                {
+                    sample insertdata = db.QueryInsert(new sample() { id = i, Text = "Insert" });
+                    Console.WriteLine(db.GetCommandTextAndParameter());
+                }
+
+                //QueryUpdate id >12
+                List<sample> updateDatas = db.QueryUpdate(new { Text = "Update" }, m => m.id > 12).ToList();
+                Console.WriteLine(db.GetCommandTextAndParameter());
+                foreach (var item in updateDatas)
+                {
+                    Console.WriteLine($"{item.id} {item.Num} {item.Text}");
+                }
+
             }
 
 

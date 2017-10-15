@@ -122,13 +122,13 @@
         <member name="M:LyDbLib.LyEntity`1.Select``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
             <summary>
             Select [Where] [OrderBy]
-            Update Set [Output] [Where] 
-            Delete [Where] 
             </summary>
         </member>
         <member name="M:LyDbLib.LyEntity`1.Where(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             Select [Where] [OrderBy]
+            Update Set [Output] [Where] 
+            Delete [Where] 
             </summary>
         </member>
         <member name="M:LyDbLib.LyEntity`1.OrderBy``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
@@ -139,6 +139,21 @@
         <member name="M:LyDbLib.LyEntity`1.OrderBy``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,``1}})">
             <summary>
             Select [Where] [OrderBy]
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.QueryUpdate``1(``0,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Update Set [Output] [Where] 
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.QueryInsert(`0)">
+            <summary>
+            Insert Output Values
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.QueryWhereOrderBy``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Select Where OrderBy
             </summary>
         </member>
         <member name="M:LyDbLib.LyEntity`1.Query``1">
