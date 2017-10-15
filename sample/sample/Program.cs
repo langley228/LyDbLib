@@ -24,13 +24,13 @@ namespace ConsoleApplication1
                 for (int i = 0; i < 5; i++)
                 {
                     db.Insert().Output().Values(new sample() { id = i, Text = "Insert" });
-                    sample ddddd = db.Query().FirstOrDefault();
+                    sample insertdata = db.Query().FirstOrDefault();
                     Console.WriteLine(db.GetCommandTextAndParameter());
 
                 }
 
                 db.Update().Set(new { Text = "Update" }).Output().Where(m => m.id == 1);
-                sample dddddu = db.Query().FirstOrDefault();
+                sample updateData = db.Query().FirstOrDefault();
                 Console.WriteLine(db.GetCommandTextAndParameter());
 
                 db.Delete().Where(m => m.id == 2);
