@@ -49,6 +49,21 @@
                 {
                     Console.WriteLine($"{item.id} {item.Num} {item.Text}");
                 }
+                
+                //QueryInsert id 10~14
+                for (int i = 10; i < 15; i++)
+                {
+                    sample insertdata = db.QueryInsert(new sample() { id = i, Text = "Insert" });
+                    Console.WriteLine(db.GetCommandTextAndParameter());
+                }
+
+                //QueryUpdate id >12
+                List<sample> updateDatas = db.QueryUpdate(new { Text = "Update" }, m => m.id > 12).ToList();
+                Console.WriteLine(db.GetCommandTextAndParameter());
+                foreach (var item in updateDatas)
+                {
+                    Console.WriteLine($"{item.id} {item.Num} {item.Text}");
+                }
             }
             
             
@@ -123,5 +138,25 @@
             1 0 Update
             3 0 Insert
             4 0 Insert
+            
+            
+            INSERT INTO sample (id, Num, Text)
+            OUTPUT INSERTED.*
+            VALUES (@EX0, @EX1, @EX2)
+            parameter ==============
+            EX0 = 14
+            EX1 = 0
+            EX2 = Insert
+
+            UPDATE sample
+            Set Text=@EX0
+            OUTPUT INSERTED.*
+            WHERE (id>@EX1)
+            parameter ==============
+            EX0 = Update
+            EX1 = 12
+
+            13 0 Update
+            14 0 Update
  </div>           
       
