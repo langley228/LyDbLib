@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LyDbLib</name>
+    </assembly>
+    <members>
+        <member name="M:LyDbLib.LyAdo.Query``1">
+            <summary>查詢</summary>
+            <typeparam name="TModel">資料型別</typeparam>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:LyDbLib.LyAdo.Query``1(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:LyDbLib.LyAdo.Query``1(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})" -->
+        <member name="M:LyDbLib.LyAdo.ExecuteCommand">
+            <summary>執行SQL Command</summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:LyDbLib.LyAdo.ExecuteCommand(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:LyDbLib.LyAdo.ExecuteCommand(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})" -->
+        <member name="M:LyDbLib.LyAdo.Open">
+            <summary>開啟連線</summary>
+        </member>
+        <member name="M:LyDbLib.LyAdo.Close">
+            <summary>關閉連線</summary>
+        </member>
+        <member name="M:LyDbLib.LyAdo.SetParameter(System.String,System.Object)">
+            <summary>設定SQL參數</summary>
+            <param name="name">參數名稱</param>
+            <param name="value">參數值</param>
+        </member>
+        <member name="M:LyDbLib.LyAdo.ClearParameter">
+            <summary>清除所有SQL參數</summary>
+        </member>
+        <member name="M:LyDbLib.LyAdo.Rollback">
+            <summary>
+            Rollback
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyAdo.GetModelString(System.String)">
+            <summary>取得用來建立 Model 的字串</summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LyDbLib.LyAdo.GetModelString(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
+            <summary>取得用來建立 Model 的字串</summary>
+            <param name="sql"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LyDbLib.LyAdo.GetModelString">
+            <summary>取得用來建立 Model 的字串</summary>
+            <returns></returns>
+        </member>
+        <member name="M:LyDbLib.LyAdo.GetCommandTextAndParameter">
+            <summary>
+            For SQL Log
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LyDbLib.LyEntity`1.ResetAuto">
+            <summary>
+            自動Reset
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ConnectionString"></param>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Insert">
+            <summary>
+            Insert [Output] Values 
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Values(`0)">
+            <summary>
+            Insert [Output] Values 
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Values``1(``0)">
+            <summary>
+            Insert [Output] Values 
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Update">
+            <summary>
+            Update Set [Output] [Where] 
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Set(`0)">
+            <summary>
+            Update Set [Output] [Where] 
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Set``1(``0)">
+            <summary>
+            Update Set [Output] [Where] 
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Output">
+            <summary>
+            Insert [Output] Values 
+            Update Set [Output] [Where] 
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Delete">
+            <summary>
+            Delete [Where] 
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Delete [Where] 
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Select">
+            <summary>
+            Select [Where] [OrderBy]
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Select``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Select [Where] [OrderBy]
+            Update Set [Output] [Where] 
+            Delete [Where] 
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Where(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Select [Where] [OrderBy]
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.OrderBy``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Select [Where] [OrderBy]
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.OrderBy``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,``1}})">
+            <summary>
+            Select [Where] [OrderBy]
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Query``1">
+            <summary>查詢</summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Query">
+            <summary>查詢</summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Execute">
+            <summary>執行SQL Command</summary>
+            <returns></returns>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.GetCommandTextAndParameter">
+            <summary>
+            For SQL Log
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.ClearParameter">
+            <summary>
+            ClearParameter
+            </summary>
+        </member>
+        <member name="M:LyDbLib.LyEntity`1.ClearSql">
+            <summary>
+            ClearSql
+            </summary>
+        </member>
+        <member name="M:LyDbLib.SqlBuilder`1.GetOperator(System.Linq.Expressions.ExpressionType)">
+            <summary>
+            取得操作子
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
